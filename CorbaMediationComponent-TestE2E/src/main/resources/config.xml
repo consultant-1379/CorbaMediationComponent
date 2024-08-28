@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE corba_config PUBLIC "-//Ericsson//DTD CORBA Config 1.0//EN" "corba_config.dtd">
+<corba_config>
+
+	<credentials name="hostCredentials">
+		<pkcs12 filename="/ericsson/config/ossrc.p12" />
+	</credentials>
+
+	<component name="test_e2e_corba_handler" credRef="hostCredentials">
+		<server_engine name="int_unsecure_dynamic" host="e2e-corba-handler-v4">
+			<connection_manager name="iiop_tp">
+			</connection_manager>
+		</server_engine>
+		<server_engine name="ne_secure_static" host="e2e-corba-handler-v4">
+			<connection_manager name="iiop_tp">
+			</connection_manager>
+			<connection_manager name="ssl">
+			</connection_manager>
+		</server_engine>
+		<server_engine name="ne_unsecure_static" host="e2e-corba-handler-v4">
+			<connection_manager name="iiop_tp">
+			</connection_manager>
+		</server_engine>
+		<server_engine name="int_unsecure_dynamic-v6" host="e2e-corba-handler-v6">
+			<connection_manager name="iiop_tp">
+			</connection_manager>
+		</server_engine>
+		<server_engine name="ne_secure_static-v6" host="e2e-corba-handler-v6">
+			<connection_manager name="iiop_tp">
+			</connection_manager>
+			<connection_manager name="ssl">
+			</connection_manager>
+		</server_engine>
+		<server_engine name="ne_unsecure_static-v6" host="e2e-corba-handler-v6">
+			<connection_manager name="iiop_tp">
+			</connection_manager>
+		</server_engine>
+		<poa_tree defaultServerEngine="int_unsecure_dynamic">
+			<poa name="ManagedComponentPoa" serverEngine="int_unsecure_dynamic" />
+			<poa name="FactoryPoa" serverEngine="int_unsecure_dynamic" />
+			<poa name="ActivityPoa" serverEngine="int_unsecure_dynamic" />
+			<poa name="JobControlPoa" serverEngine="int_unsecure_dynamic" />
+			<poa name="CallbackPoa" serverEngine="ne_unsecure_static" />
+			<poa name="CallbackSecurePoa" serverEngine="ne_secure_static" />
+			<poa name="CallbackPoaV6" serverEngine="ne_unsecure_static-v6" />
+			<poa name="CallbackSecurePoaV6" serverEngine="ne_secure_static-v6" />
+		</poa_tree>
+
+	</component>
+	<component name="test_e2e_corba_handler_v6" credRef="hostCredentials">
+		<server_engine name="int_unsecure_dynamic" host="e2e-corba-handler-v6">
+			<connection_manager name="iiop_tp">
+			</connection_manager>
+		</server_engine>
+		<server_engine name="ne_unsecure_static-v6" host="e2e-corba-handler-v6">
+			<connection_manager name="iiop_tp">
+			</connection_manager>
+		</server_engine>
+		<server_engine name="ne_secure_static-v6" host="e2e-corba-handler-v6">
+			<connection_manager name="iiop_tp">
+			</connection_manager>
+			<connection_manager name="ssl">
+			</connection_manager>
+		</server_engine>
+		<poa_tree defaultServerEngine="int_unsecure_dynamic">
+			<poa name="ManagedComponentPoa" serverEngine="int_unsecure_dynamic" />
+			<poa name="FactoryPoa" serverEngine="int_unsecure_dynamic" />
+			<poa name="ActivityPoa" serverEngine="int_unsecure_dynamic" />
+			<poa name="JobControlPoa" serverEngine="int_unsecure_dynamic" />
+			<poa name="CallbackPoa" serverEngine="ne_unsecure_static" />
+			<poa name="CallbackSecurePoa" serverEngine="ne_secure_static" />
+			<poa name="CallbackPoaV6" serverEngine="ne_unsecure_static-v6" />
+			<poa name="CallbackSecurePoaV6" serverEngine="ne_secure_static-v6" />
+		</poa_tree>
+
+	</component>
+</corba_config>

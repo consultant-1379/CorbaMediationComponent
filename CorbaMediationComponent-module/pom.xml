@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.ericsson.nms.mediation</groupId>
+		<artifactId>CorbaMediationComponent</artifactId>
+		<version>1.0.99-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>CorbaMediationComponent-module</artifactId>
+	<name>CorbaMediationComponent JBoss Module</name>
+	<packaging>pom</packaging>
+
+	<properties>
+		<maven.site.skip>true</maven.site.skip>
+		<maven.site.deploy.skip>true</maven.site.deploy.skip>
+		<root-path-zip>src/main/resources/com/ericsson/nms/mediation</root-path-zip>
+		<install-path-zip>/ericsson/nms/mediation</install-path-zip>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<finalName>com</finalName>
+					<descriptor>src/main/resources/META-INF/assembly.xml</descriptor>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- append to the packaging phase. -->
+						<goals>
+							<goal>single</goal> <!-- goals == mojos -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>CorbaMediationComponent-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>CorbaMediationComponent-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>CorbaMediationComponent-Visibroker</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.pmic.cello</groupId>
+			<artifactId>PerformanceIRPSystem_2_6</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.pmic.cello</groupId>
+			<artifactId>PerformanceIRPSystem_4_3</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.pmic.cello</groupId>
+			<artifactId>PerformanceIRPSystem_6_0</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.nms.moci.cello</groupId>
+			<artifactId>idls</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>se.ericsson.security</groupId>
+			<artifactId>corba-security-util</artifactId>
+			<version>1.0.visibroker</version>
+		</dependency>
+		<dependency>
+			<groupId>se.ericsson.security</groupId>
+			<artifactId>login</artifactId>
+			<version>1.0.visibroker</version>
+		</dependency>
+		<dependency>
+			<groupId>com.borland.enterprise.license</groupId>
+			<artifactId>lm</artifactId>
+			<version>CXP9014976-R2D01</version>
+		</dependency>
+		<dependency>
+			<groupId>com.microfocus.visibroker</groupId>
+			<artifactId>vbsec</artifactId>
+			<version>${version.visibroker}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.microfocus.visibroker</groupId>
+			<artifactId>vbjorb</artifactId>
+			<version>${version.visibroker}</version>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="com.ericsson.nms.mediation.corba.api" slot="main">
+	<resources>
+		<resource-root path="CorbaMediationComponent-api-${project.version}.jar" />
+		<resource-root path="CorbaMediationComponent-core-${project.version}.jar" />
+		<resource-root path="CorbaMediationComponent-Visibroker-${project.version}.jar" />
+		<resource-root path="PerformanceIRPSystem_2_6-${project.version}.jar" />
+		<resource-root path="PerformanceIRPSystem_4_3-${project.version}.jar" />
+		<resource-root path="PerformanceIRPSystem_6_0-${project.version}.jar" />
+		<resource-root path="idls-1.0.1.jar" />
+		<resource-root path="corba-security-util-1.0.visibroker.jar" />
+		<resource-root path="login-1.0.visibroker.jar" />
+		<resource-root path="lm-CXP9014976-R2D01.jar" />
+		<resource-root path="vbsec-${version.visibroker}.jar" />
+		<resource-root path="vbjorb-${version.visibroker}.jar" />
+	</resources>
+
+	<dependencies>
+		<!-- DEPENDENCIES TO OTHER JBOSS MODULES -->
+		<!-- <module name="" /> -->
+	</dependencies>
+</module>

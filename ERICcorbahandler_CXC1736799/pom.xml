@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>CorbaMediationComponent</artifactId>
+		<groupId>com.ericsson.nms.mediation</groupId>
+		<version>1.0.99-SNAPSHOT</version>
+	</parent>
+	<artifactId>ERICcorbahandler_CXC1736799</artifactId>
+	<packaging>pom</packaging>
+
+	<name>[${project.parent.artifactId}] CXP module</name>
+    <properties>
+        <publish_artifact>false</publish_artifact>
+    </properties>
+	<dependencies>
+
+		<dependency>
+			<groupId>com.ericsson.nms.mediation</groupId>
+			<artifactId>CorbaMediationComponent-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.nms.mediation</groupId>
+			<artifactId>CorbaMediationComponent-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ericsson.nms.mediation</groupId>
+			<artifactId>CorbaMediationComponent-Visibroker</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

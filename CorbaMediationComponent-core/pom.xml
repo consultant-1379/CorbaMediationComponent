@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>CorbaMediationComponent</artifactId>
+		<groupId>com.ericsson.nms.mediation</groupId>
+		<version>1.0.99-SNAPSHOT</version>
+	</parent>
+	<artifactId>CorbaMediationComponent-core</artifactId>
+	<packaging>jar</packaging>
+
+	<name>${project.parent.artifactId}-core</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.8.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito</artifactId>
+			<version>1.4.6</version>
+		</dependency>
+		
+		<!--  PerformanceIRPSystem IDL dependencies -->
+ 		<dependency>
+			<groupId>com.ericsson.oss.pmic.cello</groupId>
+			<artifactId>PerformanceIRPSystem_2_6</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.pmic.cello</groupId>
+			<artifactId>PerformanceIRPSystem_4_3</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.pmic.cello</groupId>
+			<artifactId>PerformanceIRPSystem_6_0</artifactId>
+			<version>${project.version}</version>
+		</dependency>  		
+	</dependencies>
+</project>

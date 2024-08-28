@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ericsson.nms.mediation</groupId>
+		<artifactId>CorbaMediationComponent</artifactId>
+		<version>1.0.99-SNAPSHOT</version>
+	</parent>
+	<groupId>com.ericsson.oss.pmic.cello</groupId>
+	<artifactId>PerformanceIRPSystem_2_6</artifactId>
+	<name>PerformanceIRPSystem_2_6</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>se.ericsson.security</groupId>
+			<artifactId>corba-security-util</artifactId>
+			<version>1.0.visibroker</version>
+		</dependency>
+		<dependency>
+			<groupId>se.ericsson.security</groupId>
+			<artifactId>login</artifactId>
+			<version>1.0.visibroker</version>
+		</dependency>
+		<dependency>
+			<groupId>com.borland.enterprise.license</groupId>
+			<artifactId>lm</artifactId>
+			<version>CXP9014976-R2D01</version>
+		</dependency>
+		<dependency>
+			<groupId>com.microfocus.visibroker</groupId>
+			<artifactId>vbsec</artifactId>
+			<version>${version.visibroker}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.microfocus.visibroker</groupId>
+			<artifactId>vbjorb</artifactId>
+			<version>${version.visibroker}</version>
+		</dependency>
+	</dependencies>
+</project>
